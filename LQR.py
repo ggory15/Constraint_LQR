@@ -22,9 +22,9 @@ Fu = np.matrix(np.zeros((m, n)));
 Fu[1] = dt
 
 # 2) set gain
-Qxx_t = np.matrix(np.eye(m)* 10)
-Qxx_T = np.matrix(np.eye(m)* 1000)
-Quu_t = np.matrix(np.eye(n)* 0.01)  # these gains is the same as example in first paper.
+Qxx_t = np.matrix(np.eye(m)* 0)
+Qxx_T = np.matrix(np.eye(m)* 0)
+Quu_t = np.matrix(np.eye(n)* 100000)  # these gains is the same as example in first paper.
 
 # 3) set final constraint
 x_init = np.matrix(np.ones((m, n)))

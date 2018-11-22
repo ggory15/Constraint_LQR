@@ -33,6 +33,7 @@ class backpass(object):
         vx = np.matrix(np.zeros((m, 1)))
         Hx = self.Gx_T
         h = self.gx_T
+	
 
         for i in range(T-1, -1, -1):
             mx = self.Fx.transpose() * vx
@@ -70,6 +71,7 @@ class backpass(object):
             h = (np.matrix(np.eye(m)) - Nu * Py * np.linalg.pinv(Nu * Py)) * n
             Vxx = Mxx + 2*Mux.transpose() * K + K.transpose() * Muu * K
             vx = mx + K.transpose() * mu + (Mux.transpose() + K.transpose() * Muu) * k
+	    Vxx = 0.5 * (Vxx + Vxx.transpose())
 
         self.K.reverse()
         self.k.reverse()
