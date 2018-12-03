@@ -1,4 +1,4 @@
 # Constraint_LQR
 
-'''run'''
-ipython LQR.py
+```run```
+  ipython LQR.py
